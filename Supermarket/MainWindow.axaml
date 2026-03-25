@@ -1,0 +1,34 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="SupermarketApp.MainWindow"
+        Title="SupermarketApp"
+        Width="1000" Height="620"
+        WindowStartupLocation="CenterScreen">
+
+  <DockPanel Margin="10">
+
+    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="6" Margin="0,0,0,8">
+      <Button Name="btnAll"        Content="Всі товари"         Width="105"/>
+      <Button Name="btnSort"       Content="Топ 10 за ціною ↓" Width="140"/>
+      <Button Name="btnJoin"       Content="JOIN постачальники" Width="150"/>
+      <Button Name="btnJoinChar"   Content="JOIN хар-ки"        Width="100"/>
+      <Button Name="btnAggregates" Content="Агрегати"           Width="90"/>
+      <Button Name="btnGroup"      Content="GROUP BY"           Width="90"/>
+      <Separator Width="8"/>
+      <TextBlock VerticalAlignment="Center" Text="Ціна від:"/>
+      <TextBox Name="txtMin" Width="65" Watermark="min"/>
+      <TextBlock VerticalAlignment="Center" Text="до:"/>
+      <TextBox Name="txtMax" Width="65" Watermark="max"/>
+      <Button Name="btnFilter" Content="Фільтр" Width="75"/>
+    </StackPanel>
+
+    <TextBlock Name="lblStatus" DockPanel.Dock="Bottom"
+               Margin="0,4,0,0" FontSize="12" Foreground="Gray" Text="Готово"/>
+
+    <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                  VerticalScrollBarVisibility="Auto">
+      <Grid Name="gridData"/>
+    </ScrollViewer>
+
+  </DockPanel>
+</Window>
